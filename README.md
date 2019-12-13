@@ -2,14 +2,12 @@
 <img src="https://unlicense.org/pd-icon.png" alt="Public Domain" align="right"/>
 </a>
 
-# Domain persistence modeling spikes
-
-Spikes are not to be considered stable.
+# Domain persistence modeling examples
 
 * Ports
   * [Java Spring Boot](java-spring-boot)
   * [Kotlin Spring Boot](kotlin-spring-boot)
-  * [Kotlin Micronaut](kotlin-micronaut) (most up-to-date spike)
+  * [Kotlin Micronaut](kotlin-micronaut) (most up-to-date)
 * [Goals](#goals)
   * [Non-goals](#non-goals)
 * [Concepts](#concepts)
@@ -26,7 +24,7 @@ Spikes are not to be considered stable.
 * [Spring-recommended documentation](#spring-recommended-documentation)
   * [Reference documentation](#reference-documentation)
 
-This spike explores _domain persistence modeling_, that is, how the domain
+These examples explores _domain persistence modeling_, that is, how the domain
 model and persistence models relate, and good ways to express those relations
 in code.  It is _not_ a mini-ORM, but uses Spring Data to abstract away
 persistence operations.
@@ -254,7 +252,7 @@ Intentionally avoid more complex persistence features (_eg_,
 framework-managed relationships, lazy loading).  Expose most persistence
 details directly in Kotlin/Java code, or in SQL.
 
-The purpose of this spike is not to maximize framework usage, but to
+The purpose of these examples is not to maximize framework usage, but to
 demonstrate code-side domain-persistence patterns.
 
 ### Coverage
@@ -287,8 +285,8 @@ This has unexpected benefits:
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-  &mdash; After much trial with both Gradle and Maven, this spike uses Maven
-  for:
+  &mdash; After much trial with both Gradle and Maven, these examples uses
+  Maven for:
   1. More repeatable builds
   2. Simplicity of build configuration
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.2.0.RC1/maven-plugin/)
