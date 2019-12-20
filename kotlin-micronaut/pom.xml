@@ -39,7 +39,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- TODO: Inherit the version from Micronaut BOM -->
         <micronaut.data.version>1.0.0.M5</micronaut.data.version>
-        <micronaut.version>1.3.0.M1</micronaut.version>
+        <micronaut.version>1.3.0.M2</micronaut.version>
         <persistence.version>2.2.3</persistence.version>
         <postgresql.version>42.2.9</postgresql.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
