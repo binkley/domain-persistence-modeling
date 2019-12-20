@@ -109,12 +109,14 @@ internal class PersistedDomain<Snapshot,
         }
     }
 
+    @Generated // Lie to JaCoCo -- why test code for testing?
     override fun equals(other: Any?) = this === other
             || other is PersistedDomain<*, *, *, *, *, *>
             && snapshot == other.snapshot
             && holder == other.holder
             && dependent == other.dependent
 
+    @Generated // Lie to JaCoCo -- why test code for testing?
     override fun hashCode() = hash(snapshot, holder, dependent)
 
     @Generated // Lie to JaCoCo -- why test code for testing?
