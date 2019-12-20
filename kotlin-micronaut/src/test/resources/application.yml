@@ -11,6 +11,12 @@ flyway:
     default:
       locations: classpath:db/migration
 
+log:
+  levels:
+    # TRACE for Micronaut Data to support testing of queries;
+    # output does *not* appear on the console.
+    io.micronaut.data: TRACE
+
 micronaut:
   application:
     name: micronaut-domain-persistence-modeling
