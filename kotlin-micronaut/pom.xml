@@ -37,8 +37,6 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <!-- TODO: Inherit the version from Micronaut BOM -->
-        <micronaut-data.version>1.0.0.M5</micronaut-data.version>
         <micronaut.version>1.3.0.M2</micronaut.version>
         <persistence.version>2.2.3</persistence.version>
         <postgresql.version>42.2.9</postgresql.version>
@@ -84,6 +82,24 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Clearer than using annotationProcessorPaths for kapt, but with
+             drawback of leaving them on classpath during compilation. -->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-inject-java</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-validation</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-data-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -290,30 +306,6 @@
                         <goals>
                             <goal>kapt</goal>
                         </goals>
-                        <configuration>
-                            <annotationProcessorPaths>
-                                <!-- TODO: Inherit versions -->
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-inject-java
-                                    </artifactId>
-                                    <version>${micronaut.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-validation
-                                    </artifactId>
-                                    <version>${micronaut.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut.data</groupId>
-                                    <artifactId>micronaut-data-processor
-                                    </artifactId>
-                                    <version>${micronaut-data.version}
-                                    </version>
-                                </annotationProcessorPath>
-                            </annotationProcessorPaths>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>compile</id>
@@ -326,30 +318,6 @@
                         <goals>
                             <goal>test-kapt</goal>
                         </goals>
-                        <configuration>
-                            <annotationProcessorPaths>
-                                <!-- TODO: Inherit versions -->
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-inject-java
-                                    </artifactId>
-                                    <version>${micronaut.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-validation
-                                    </artifactId>
-                                    <version>${micronaut.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>io.micronaut.data</groupId>
-                                    <artifactId>micronaut-data-processor
-                                    </artifactId>
-                                    <version>${micronaut-data.version}
-                                    </version>
-                                </annotationProcessorPath>
-                            </annotationProcessorPaths>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>test-compile</id>
