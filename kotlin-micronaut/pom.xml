@@ -274,6 +274,8 @@
                     <args>
                         <arg>-Xjsr305=strict</arg>
                         <arg>-Xjvm-default=enable</arg>
+                        <!-- TODO: Until it becomes the default -->
+                        <arg>-Xnew-inference</arg>
                     </args>
                     <compilerPlugins>
                         <plugin>all-open</plugin>
