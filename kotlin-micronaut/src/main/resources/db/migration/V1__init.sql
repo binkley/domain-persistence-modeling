@@ -9,6 +9,11 @@ CREATE TABLE other
     updated_at TIMESTAMP
 );
 
+-- TODO: How to include comments while creating?
+COMMENT ON TABLE other IS 'Neither parent nor child';
+COMMENT ON COLUMN other.id IS 'For internal DB use only; see `natural_id`';
+COMMENT ON COLUMN other.natural_id IS 'Use me, not the primary key';
+
 CREATE TABLE parent
 (
     id               SERIAL PRIMARY KEY,
@@ -24,6 +29,11 @@ CREATE TABLE parent
     created_at       TIMESTAMP,
     updated_at       TIMESTAMP
 );
+
+-- TODO: How to include comments while creating?
+COMMENT ON TABLE parent IS 'Root of all things';
+COMMENT ON COLUMN parent.id IS 'For internal DB use only; see `natural_id`';
+COMMENT ON COLUMN parent.natural_id IS 'Use me, not the primary key';
 
 CREATE TABLE child
 (
@@ -43,6 +53,11 @@ CREATE TABLE child
     created_at          TIMESTAMP,
     updated_at          TIMESTAMP
 );
+
+-- TODO: How to include comments while creating?
+COMMENT ON TABLE child IS 'Born of parents, yet separate';
+COMMENT ON COLUMN parent.id IS 'For internal DB use only; see `natural_id`';
+COMMENT ON COLUMN parent.natural_id IS 'Use me, not the primary key';
 
 CREATE OR REPLACE FUNCTION upsert_other(_natural_id other.natural_id%TYPE,
                                         _value other.value%TYPE,
