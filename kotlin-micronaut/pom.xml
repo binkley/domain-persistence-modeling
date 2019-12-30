@@ -218,6 +218,7 @@
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <!-- @formatter:on -->
+
         <plugins>
             <plugin>
                 <artifactId>maven-enforcer-plugin</artifactId>
