@@ -38,6 +38,7 @@ internal class TrackedOptionalOne<T : Comparable<T>>(
     }
 }
 
+/** @todo Consider making a sealed class */
 internal abstract class TrackedSortedSet<T : Comparable<T>>(
     private var arity: TrackingArity,
     private var initial: Set<T>,
