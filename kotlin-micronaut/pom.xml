@@ -38,6 +38,8 @@
         <snapshot-repository.url>https://oss.sonatype.org/content/repositories/snapshots</snapshot-repository.url>
         <spring-boot-maven-plugin.version>2.2.2.RELEASE</spring-boot-maven-plugin.version>
         <test-containers.version>1.12.4</test-containers.version>
+        <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
+        <versions-maven-plugin.phase>none</versions-maven-plugin.phase>
         <!-- @formatter:on -->
     </properties>
 
@@ -233,6 +235,20 @@
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>update-dependencies</id>
+                        <phase>${versions-maven-plugin.phase}</phase>
+                        <goals>
+                            <goal>update-properties</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
