@@ -267,6 +267,7 @@ This has unexpected benefits:
 
 ## Open questions
 
+0. Soft delete
 1. Should snapshots be deep or shallow?
 2. Should snapshots generally follow the persistence representation or the
    domain representation?  If snapshots are purely implementation
@@ -277,6 +278,8 @@ This has unexpected benefits:
    however, that does not address interface implementation concerns.  And the
    programmer needs to decide between "simple" and "dependent
    "functionalities".
+4. Rule that root of aggregate always has version greater or equal to any
+   descendants.
 
 ## Spring-recommended documentation
 
