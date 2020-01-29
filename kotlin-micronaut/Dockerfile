@@ -1,0 +1,18 @@
+FROM postgres:12.1
+MAINTAINER B. K. Oxley (binkley) <binkley@alumni.rice.edu>
+
+RUN echo 'debconf debconf/frontend select Noninteractive' \
+    | debconf-set-selections
+
+RUN apt-get update \
+    && apt-get install -y apt-utils apt-transport-https ca-certificates
+
+RUN apt-get install -y build-essential dctrl-tools debhelper git \
+    postgresql-server-dev-all
+
+RUN git clone https://github.com/linz/postgresql-tableversion.git \
+    && cd postgresql-tableversion \
+    && git checkout 1.7.1 \
+    && make deb install \
+    && cd .. \
+    && rm -rf postgresql-tableversion
