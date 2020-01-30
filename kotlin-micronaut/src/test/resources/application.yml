@@ -3,7 +3,7 @@ datasources:
     dialect: POSTGRES
     driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
     password: ""
-    url: jdbc:tc:postgresql-tableversion:12.1-1.7.1:///postgres
+    url: jdbc:tc:postgresql:12.1-tableversion-1.7.1:///postgres
     username: postgres
 
 flyway:

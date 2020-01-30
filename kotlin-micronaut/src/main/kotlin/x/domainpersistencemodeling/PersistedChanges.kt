@@ -11,10 +11,10 @@ import javax.transaction.Transactional
  */
 @Repository
 @Singleton
-@Transactional
 internal open class PersistedChangeFactory(
     private val repository: ChangeRepository
 ) : ChangeFactory {
+    @Transactional
     override fun <T> groupAs(name: String, block: () -> T): T {
         val revision = repository.updateByChangeBegin(name)
         try {
