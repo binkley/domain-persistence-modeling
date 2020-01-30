@@ -12,7 +12,7 @@ import javax.transaction.Transactional
 internal class PersistedChangeFactory(
     private val repository: ChangeRepository
 ) : ChangeFactory {
-    override fun <T> change(name: String, block: () -> T): T {
+    override fun <T> groupAs(name: String, block: () -> T): T {
         val revision = repository.updateByChangeBegin(name)
         try {
             val result = block()
