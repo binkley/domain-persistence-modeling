@@ -11,13 +11,13 @@ import javax.transaction.Transactional
 
 @Transactional
 fun <T> change(changes: ChangeRepository, name: String, block: () -> T): T {
-    val revisionId = changes.beginChange(name)
+    val revisionId = changes.updateByChangeBegin(name)
     try {
         val result = block()
-        changes.commitChange()
+        changes.updateByChangeCommit()
         return result
     } catch (e: Throwable) {
-        changes.rollbackChange(revisionId)
+        changes.updateByChangeRollback(revisionId)
         throw e
     }
 }
