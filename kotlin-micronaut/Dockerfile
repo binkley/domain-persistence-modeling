@@ -1,4 +1,4 @@
-FROM postgres:12.1
+FROM postgres:12.1 AS build
 MAINTAINER B. K. Oxley (binkley) <binkley@alumni.rice.edu>
 
 RUN echo 'debconf debconf/frontend select Noninteractive' \
@@ -9,6 +9,9 @@ RUN apt-get update \
 
 RUN apt-get install -y build-essential dctrl-tools debhelper git \
     postgresql-server-dev-all
+
+FROM build
+MAINTAINER B. K. Oxley (binkley) <binkley@alumni.rice.edu>
 
 RUN git clone https://github.com/linz/postgresql-tableversion.git \
     && cd postgresql-tableversion \
