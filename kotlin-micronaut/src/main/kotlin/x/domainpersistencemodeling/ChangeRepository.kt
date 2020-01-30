@@ -8,6 +8,13 @@ import io.micronaut.data.repository.GenericRepository
 @JdbcRepository(dialect = POSTGRES)
 interface ChangeRepository : GenericRepository<Long, Long> {
     @Query(
+        """
+SELECT * FROM table_revision.ver_get_last_revision()        
+    """
+    )
+    fun findByLast(): Int
+
+    @Query(
         value = """
 SELECT * table_revision.ver_create_revision(:name)        
     """, readOnly = false
