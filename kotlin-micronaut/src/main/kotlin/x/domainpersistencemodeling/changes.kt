@@ -1,5 +1,6 @@
 package x.domainpersistencemodeling
 
+import io.micronaut.data.exceptions.DataAccessException
 import javax.transaction.Transactional
 
 // TODO: Method to:
@@ -16,7 +17,8 @@ fun <T> change(changes: ChangeRepository, name: String, block: () -> T): T {
         val result = block()
         changes.updateByChangeCommit()
         return result
-    } catch (e: Throwable) {
+    } catch (e: DataAccessException) {
+        // TODO: Loses `e` if rollback fails
         changes.updateByChangeRollback(revisionId)
         throw e
     }
