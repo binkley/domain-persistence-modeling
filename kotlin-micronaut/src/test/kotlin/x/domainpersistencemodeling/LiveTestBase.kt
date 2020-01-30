@@ -50,6 +50,8 @@ internal const val childNaturalId = "c"
 @MicronautTest
 internal abstract class LiveTestBase {
     @Inject
+    lateinit var changes: ChangeFactory
+    @Inject
     lateinit var others: OtherFactory
     @Inject
     lateinit var parents: ParentFactory
