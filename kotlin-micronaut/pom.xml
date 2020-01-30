@@ -12,14 +12,14 @@
     <properties>
         <!-- @formatter:off -->
         <atrium.version>0.8.0</atrium.version>
-        <flyway.version>6.1.4</flyway.version>
+        <flyway.version>6.2.1</flyway.version>
         <generateBackupPoms>false</generateBackupPoms>
         <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
         <jacoco-minimum-coverage>96%</jacoco-minimum-coverage>
         <java.charset>UTF-8</java.charset>
         <java.version>11</java.version>
         <jsqlparser.version>3.1</jsqlparser.version>
-        <junit5.version>5.6.0-RC1</junit5.version>
+        <junit5.version>5.6.0</junit5.version>
         <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
         <kotlin.compiler.languageVersion>1.3</kotlin.compiler.languageVersion>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
@@ -36,8 +36,8 @@
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <snapshot-repository.url>https://oss.sonatype.org/content/repositories/snapshots</snapshot-repository.url>
-        <spring-boot-maven-plugin.version>2.2.2.RELEASE</spring-boot-maven-plugin.version>
-        <test-containers.version>1.12.4</test-containers.version>
+        <spring-boot-maven-plugin.version>2.2.4.RELEASE</spring-boot-maven-plugin.version>
+        <test-containers.version>1.12.5</test-containers.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
         <versions-maven-plugin.phase>none</versions-maven-plugin.phase>
         <!-- @formatter:on -->
