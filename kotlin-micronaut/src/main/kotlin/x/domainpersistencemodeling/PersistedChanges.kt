@@ -5,11 +5,14 @@ import io.micronaut.data.exceptions.DataAccessException
 import javax.inject.Singleton
 import javax.transaction.Transactional
 
-/** @todo Generic repository needs `@Repository` but crud does not */
+/**
+ *  @todo Generic repository needs `@Repository` but crud does not
+ *  @todo Why does kotlin open plugin not fix this?
+ */
 @Repository
 @Singleton
 @Transactional
-internal class PersistedChangeFactory(
+internal open class PersistedChangeFactory(
     private val repository: ChangeRepository
 ) : ChangeFactory {
     override fun <T> groupAs(name: String, block: () -> T): T {
