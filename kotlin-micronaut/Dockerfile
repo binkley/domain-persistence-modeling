@@ -15,7 +15,7 @@ MAINTAINER B. K. Oxley (binkley) <binkley@alumni.rice.edu>
 
 RUN git clone https://github.com/linz/postgresql-tableversion.git \
     && cd postgresql-tableversion \
-    && git checkout 1.7.1 \
+    && git checkout 1.8.0 \
     && make deb install \
     && cd .. \
     && rm -rf postgresql-tableversion
